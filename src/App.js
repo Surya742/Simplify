@@ -2,21 +2,20 @@ import React, { useRef, useEffect} from 'react';
 import WebViewer from '@pdftron/pdfjs-express';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import Stack from '@mui/material/Stack';
+import OutlineBtn from './components/OutlineBtn'
+import TextArea from './components/TextArea'
 import './App.css';
 
 const Input = styled('input')({
-  display: 'none',
+  display: 'block',
 });
 
 function App() {
   const viewer = useRef(null);
   const input = document.getElementById('file_upload');
-  input.addEventListener('change', () => {
-    console.log('1')
-  });
+  // input.addEventListener('change', () => {
+  //   console.log('1')
+  // });
 
   useEffect(() => {
     WebViewer(
@@ -43,14 +42,17 @@ function App() {
 
   return (
     <div className="MyComponent">
-      <label htmlFor="file_upload">
-        <Input accept=".pdf" id="file_upload" name="file_upload" type="file" />
-        {/* <Button variant="contained" component="span">
-          Upload
-        </Button> */}
-      </label>
       <div className="header">Simplify</div>
+      {/* <label htmlFor="file_upload">
+        <Input accept=".pdf" id="file_upload" name="file_upload" type="file" />
+        <Button variant="contained" component="span">
+          Upload
+        </Button>
+      </label> */}
       <div className="webviewer" ref={viewer}></div>
+      <div className="textarea"><TextArea width={1000} /></div>
+      <div className="summary"><OutlineBtn title='Summarize' /></div>
+      <div className="clear"><OutlineBtn title='Clear' /></div>
     </div>
   );
 }

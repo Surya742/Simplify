@@ -38,6 +38,31 @@
 }
 
 .webviewer {
-  height: 100vh;
+  height: 80vh;
   width: 100vh;
+}
+
+.header {
+  font-size: 3em;
+  font-weight: bold;
+  color: #0080ff;
+  padding: 0.3em;
+}
+
+.textarea {
+  position: absolute;
+  right: 1rem;
+  top: 6rem;
+}
+
+.summary {
+  position: absolute;
+  right: 1.5rem;
+  top: 23.5rem;
+}
+
+.clear {
+  position: absolute;
+  right: 9.5rem;
+  top: 23.5rem;
 }
