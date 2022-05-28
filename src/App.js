@@ -4,10 +4,12 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import OutlineBtn from './components/OutlineBtn'
 import TextArea from './components/TextArea'
+import InputArea from './components/InputArea'
+import AnsInput from './components/AnsInput'
 import './App.css';
 
 const Input = styled('input')({
-  display: 'block',
+  display: 'none',
 });
 
 function App() {
@@ -43,16 +45,21 @@ function App() {
   return (
     <div className="MyComponent">
       <div className="header">Simplify</div>
-      {/* <label htmlFor="file_upload">
+      
+      <div className="webviewer" ref={viewer}></div>
+      <div className="textarea"><TextArea wid={80} /></div>
+      <div className="summary"><OutlineBtn title='Summarize' /></div>
+      <div className="clear"><OutlineBtn title='Clear' /></div>
+      <div className="question"><InputArea /></div>
+      <div className="answer"><AnsInput /></div>
+      <div className="answerBtn"><OutlineBtn title='Answer' /></div>
+
+      <label htmlFor="file_upload" style={{ position: 'absolute', left: '1em', bottom: '1em' }}>
         <Input accept=".pdf" id="file_upload" name="file_upload" type="file" />
         <Button variant="contained" component="span">
           Upload
         </Button>
-      </label> */}
-      <div className="webviewer" ref={viewer}></div>
-      <div className="textarea"><TextArea width={1000} /></div>
-      <div className="summary"><OutlineBtn title='Summarize' /></div>
-      <div className="clear"><OutlineBtn title='Clear' /></div>
+      </label>
     </div>
   );
 }

@@ -66,3 +66,21 @@
   right: 9.5rem;
   top: 23.5rem;
 }
+
+.question {
+  position: absolute;
+  right: 1.5rem;
+  top: 30rem;
+}
+
+.answer {
+  position: absolute;
+  right: 1.5rem;
+  top: 35rem;
+}
+
+.answerBtn {
+  position: absolute;
+  right: 1.5rem;
+  top: 39.5rem;
+}
